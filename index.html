@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Bedah Jiwa — ruang refleksi, filsafat, kesadaran, nalar dan perjalanan memahami manusia bersama RD Asep Maulana.">
+
+<title>Bedah Jiwa | RD Asep Maulana</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f5f1e8;
+    color:#292929;
+    line-height:1.8;
+}
+
+.site-header{
+    background:#171717;
+    color:#fff;
+    padding:22px 18px;
+    border-bottom:4px solid #b9975b;
+}
+
+.topbar{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand-mark{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#b9975b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#171717;
+    font-size:23px;
+    font-weight:bold;
+}
+
+.brand-name{
+    font-size:25px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.brand-name span{
+    color:#d0b477;
+}
+
+.brand-sub{
+    color:#c9c9c9;
+    font-size:13px;
+}
+
+.author-head{
+    max-width:1000px;
+    margin:18px auto 0;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+}
+
+.author-photo{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #b9975b;
+    background:#ddd;
+}
+
+.quote{
+    color:#d0b477;
+    font-style:italic;
+    margin-left:auto;
+}
+
+.nav{
+    background:#222;
+    border-bottom:1px solid #444;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.nav-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+}
+
+.nav a{
+    color:#eee;
+    text-decoration:none;
+    padding:14px 17px;
+    white-space:nowrap;
+    font-size:14px;
+}
+
+.nav a:hover{
+    background:#b9975b;
+    color:#111;
+}
+
+.hero{
+    max-width:1000px;
+    margin:42px auto;
+    padding:45px 28px;
+    background:#fffdf8;
+    border:1px solid #ddd2bc;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    color:#211f1b;
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    color:#a17d3d;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:17px;
+    color:#555;
+}
+
+.section{
+    max-width:1000px;
+    margin:42px auto;
+    padding:0 18px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    font-size:29px;
+    color:#252525;
+}
+
+.section-title p{
+    color:#777;
+    font-size:14px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#fffdf8;
+    border:1px solid #ded5c4;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.09);
+}
+
+.card h3{
+    color:#8a692f;
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.card p{
+    font-size:15px;
+    color:#555;
+}
+
+.article{
+    background:#fffdf8;
+    border:1px solid #ded5c4;
+    padding:35px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.article h2{
+    color:#8a692f;
+    margin-bottom:15px;
+    font-size:27px;
+}
+
+.article h3{
+    margin-top:25px;
+    margin-bottom:8px;
+}
+
+.article p{
+    margin-bottom:16px;
+}
+
+.article blockquote{
+    border-left:4px solid #b9975b;
+    padding:12px 20px;
+    margin:22px 0;
+    background:#f5f0e5;
+    color:#555;
+    font-style:italic;
+}
+
+.author-box{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#1c1c1c;
+    color:white;
+    padding:28px;
+}
+
+.author-box img{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #b9975b;
+}
+
+.author-box h3{
+    color:#d0b477;
+    margin-bottom:4px;
+}
+
+.author-box p{
+    color:#ddd;
+    font-size:14px;
+    margin:0;
+}
+
+footer{
+    margin-top:60px;
+    background:#171717;
+    color:#aaa;
+    text-align:center;
+    padding:30px 18px;
+    font-size:13px;
+}
+
+footer strong{
+    color:#d0b477;
+}
+
+@media(max-width:750px){
+    .topbar{
+        align-items:flex-start;
+    }
+
+    .quote{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .article{
+        padding:24px 20px;
+    }
+
+    .brand-name{
+        font-size:21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-mark">BJ</div>
+
+            <div>
+                <div class="brand-name">
+                    BEDAH <span>JIWA</span>
+                </div>
+
+                <div class="brand-sub">
+                    Menelusuri manusia sampai ke akar kesadarannya
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="author-head">
+
+        <!--
+        Jika nanti ingin memasukkan foto asli RD Asep Maulana,
+        bagian src ini dapat diganti dengan alamat foto.
+        -->
+        <div class="author-photo"
+             style="display:flex;align-items:center;justify-content:center;background:#b9975b;color:#171717;font-weight:bold;">
+            AM
+        </div>
+
+        <div>
+            <strong>RD Asep Maulana</strong><br>
+            <span style="color:#bbb;">Penulis & penggali nalar jiwa</span>
+        </div>
+
+        <div class="quote">
+            "Kenali pikiranmu, sebelum pikiranmu mengenalimu."
+        </div>
+
+    </div>
+
+</header>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#jiwa">Bedah Jiwa</a>
+        <a href="#filsafat">Filsafat</a>
+        <a href="#artikel">Artikel</a>
+        <a href="#penulis">Penulis</a>
+    </div>
+</nav>
+
+<main>
+
+<section class="hero" id="beranda">
+
+    <h1>
+        BEDAH <span>JIWA</span>
+    </h1>
+
+    <p>
+        Sebuah ruang untuk menelusuri manusia dari lapisan yang
+        paling tampak hingga bagian terdalam dari pikiran,
+        kesadaran, kehendak, pengalaman dan makna kehidupan.
+    </p>
+
+</section>
+
+
+<section class="section" id="tentang">
+
+    <div class="section-title">
+        <h2>Tentang Bedah Jiwa</h2>
+        <p>Bukan sekadar membaca pikiran, tetapi memahami akar manusia.</p>
+    </div>
+
+    <div class="article">
+
+        <p>
+            Manusia sering kali mengenal dirinya melalui apa yang tampak:
+            nama, pekerjaan, status, keberhasilan, kegagalan dan berbagai
+            pengalaman hidup. Namun semua itu hanyalah permukaan.
+        </p>
+
+        <p>
+            Di balik tindakan terdapat pikiran. Di balik pikiran terdapat
+            cara memandang kenyataan. Di balik cara memandang kenyataan
+            terdapat pengalaman, keyakinan, ingatan, keinginan dan
+            kesadaran yang membentuk arah kehidupan seseorang.
+        </p>
+
+        <blockquote>
+            Bedah Jiwa berusaha melihat manusia bukan hanya dari apa yang
+            dilakukan, tetapi dari proses batin yang membuat seseorang
+            memilih untuk melakukan sesuatu.
+        </blockquote>
+
+        <p>
+            Karena itu, pembahasan di sini menyentuh filsafat, psikologi,
+            kesadaran, nalar, pengalaman manusia, pencarian makna dan
+            pertanyaan-pertanyaan mendasar tentang kehidupan.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="jiwa">
+
+    <div class="section-title">
+        <h2>Ruang Bedah Jiwa</h2>
+        <p>Beberapa pintu untuk memahami kehidupan manusia.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Kesadaran</h3>
+            <p>
+                Apa yang membuat manusia menyadari dirinya?
+                Dari mana munculnya kesadaran dan bagaimana
+                kesadaran memengaruhi kehidupan?
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Pikiran</h3>
+            <p>
+                Pikiran dapat menjadi alat untuk memahami kenyataan,
+                tetapi juga dapat membentuk batas yang membuat manusia
+                melihat dunia secara berbeda.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Jiwa</h3>
+            <p>
+                Membicarakan jiwa berarti memasuki wilayah pertanyaan
+                tentang diri, pengalaman batin, kehendak, makna dan
+                keberadaan manusia.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="filsafat">
+
+    <div class="section-title">
+        <h2>Filsafat & Kehidupan</h2>
+        <p>Menghubungkan gagasan dengan pengalaman manusia sehari-hari.</p>
+    </div>
+
+    <div class="article">
+
+        <h2>Mengapa Manusia Perlu Bertanya?</h2>
+
+        <p>
+            Pertanyaan yang mendalam sering kali lebih berharga daripada
+            jawaban yang tergesa-gesa. Ketika manusia bertanya tentang
+            dirinya, ia sebenarnya sedang membuka pintu menuju pemahaman
+            yang lebih luas.
+        </p>
+
+        <p>
+            Mengapa aku berpikir seperti ini?
+            Mengapa aku menginginkan sesuatu?
+            Mengapa aku takut kehilangan?
+            Mengapa pengalaman tertentu mengubah cara pandangku?
+        </p>
+
+        <p>
+            Pertanyaan-pertanyaan tersebut membawa kita dari sekadar
+            melihat peristiwa menuju memahami makna di balik peristiwa.
+        </p>
+
+        <blockquote>
+            Manusia tidak hanya hidup di dalam dunia yang ia lihat;
+            manusia juga hidup di dalam dunia yang ia tafsirkan.
+        </blockquote>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="artikel">
+
+    <div class="section-title">
+        <h2>Artikel Pilihan</h2>
+        <p>Gagasan untuk dibaca perlahan dan direnungkan.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Hakikat Mengubah Nasib</h3>
+            <p>
+                Menelusuri hubungan antara keadaan, pikiran,
+                keputusan, kebiasaan dan tindakan manusia dalam
+                perjalanan hidupnya.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Tanya Jiwa</h3>
+            <p>
+                Pertanyaan-pertanyaan mendasar yang mengajak manusia
+                berhenti sejenak dan melihat ke dalam dirinya sendiri.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Nalar Jagat</h3>
+            <p>
+                Menelusuri hubungan antara manusia, alam, pengalaman,
+                pengetahuan dan cara manusia memahami keberadaan.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="penulis">
+
+    <div class="section-title">
+        <h2>Tentang Penulis</h2>
+    </div>
+
+    <div class="author-box">
+
+        <div style="width:75px;height:75px;border-radius:50%;
+                    background:#b9975b;color:#171717;
+                    display:flex;align-items:center;
+                    justify-content:center;font-weight:bold;
+                    font-size:20px;">
+            AM
+        </div>
+
+        <div>
+            <h3>RD Asep Maulana</h3>
+
+            <p>
+                Penulis Bedah Jiwa — sebuah ruang pemikiran yang
+                berusaha mengurai manusia, pikiran, kesadaran,
+                kehidupan dan pertanyaan-pertanyaan yang sering
+                tersembunyi di balik pengalaman sehari-hari.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>Bedah Jiwa</strong> —
+        RD Asep Maulana
+    </p>
+
+    <p>
+        Menelusuri manusia sampai ke akar kesadarannya.
+    </p>
+
+</footer>
+
+</body>
+  </html>
